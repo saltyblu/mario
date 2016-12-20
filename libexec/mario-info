@@ -1,0 +1,12 @@
+#!/bin/bash
+# Usage: mario info package
+# Summary: Display information about a given package in the repos
+# Help:
+#   mario info gnome-shell
+#
+
+if [ $# -gt 0 ]; then
+    pacman -Si $*
+else
+    echo "Error need at least one parameter"
+fi

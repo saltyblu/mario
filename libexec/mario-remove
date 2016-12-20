@@ -1,0 +1,10 @@
+#!/bin/bash
+# Usage: mario mark package
+# Summary: Remove the specified package(s), retaining its configuration(s) and required dependencies.
+#
+
+if [ $# -gt 0 ]; then
+    pacman -R $*
+else
+    echo "Error need at least one parameter"
+fi

@@ -1,0 +1,5 @@
+#!/bin/bash
+# Usage: mario clean
+# Summary: Cleans all package caches and locally installed packages
+
+pacman -Scc

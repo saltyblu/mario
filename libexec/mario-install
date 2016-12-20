@@ -1,0 +1,101 @@
+#!/usr/bin/ruby
+# Usage: mario install [options] package
+# Summary: Installes packcages via provider pacman or yaourt
+# Help: Installs packages,
+# detailed information with mario install --help
+# Examples:
+#   mario install gnome
+#     Installs package gnome from official repos or pacman mirror
+#   mario install -p yaourt byobu
+#     Installs package byoubu from AUR Repo
+#
+# TODO: Print fct.
+
+require 'optparse'
+require 'ostruct'
+
+class App
+  VERSION ='0.0.1'
+  def initialize(arguments, stdin)
+    @arguments = arguments
+    @stdin = stdin
+
+    # Set default options here
+    @provider = [ 'y', 'yaourt', 'p', 'pacman' ]
+    @options = OpenStruct.new
+    @options.regexp = false
+    @options.provider = 'pacman'
+  end
+
+  def run
+    parsed_options?
+    command = get_command
+    exec( command )
+  end
+
+
+  def get_command
+    if @options.provider == 'yaourt'
+      if @options.regexp
+        print "ERROR: Provider Yaourt can't use -r \n"
+        exit 2
+      end
+
+      if @arguments.length > 1
+        print "ERROR: Provider Yaourt can't use more than one argument \n"
+        exit 2
+      end
+
+      command="yaourt #{@arguments.join(" ")}"
+    else
+      if @options.regexp
+        if @arguments.length != 0
+         command = "pacman -S $(pacman -Ssq #{@arguments.join(" ")})"
+        end
+      else
+        command = "pacman -S #{@arguments.join(" ")}"
+      end
+    end
+    return command
+  end
+
+  def parsed_options?
+
+    opts = OptionParser.new
+    opts.banner = 'Usage: mario install [options] package'
+
+
+    opts.on('-v', '--version', 'Display the version, then exits') do
+      output_version
+      exit 0
+    end
+
+    opts.on("-r", "--regexp", "Use regular expression to install all packages matching to the search pattern.
+            Example: mario install -r fonts
+            ") do
+      @options.regexp = true
+    end
+
+    opts.on("-p", "--provider PROVIDER", "Specify the package provider. mario install -p [pacman|p|yaourt|y] byobu.
+            Default: pacman
+            ") do |p|
+      if @provider.include? p
+        @options.provider = p
+      else
+        print "ERROR: Provider #{p} is not supported \n"
+        print @options.help
+        exit 2
+      end
+    end
+
+    @options.help = opts.help()
+    opts.parse!(@arguments) rescue return false
+  end
+
+  def output_version
+    print "mario-install.rb version: #{VERSION} \n"
+  end
+end
+
+app = App.new(ARGV, STDIN)
+app.run

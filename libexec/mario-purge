@@ -1,0 +1,10 @@
+#!/bin/bash
+# Usage: mario purge package
+# Summary: Remove the specified package(s), its configuration(s) and unneeded dependencies
+#
+
+if [ $# -gt 0 ]; then
+    pacman -Rnc $*
+else
+    echo "Error need at least one parameter"
+fi

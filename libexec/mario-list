@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Usage: mario list parameter
+# Summary: List all installed packages
+# Help:
+#    Default case (no parameter) shows all installed packages.
+#    Optional Parameter:
+#    unofficial          To list explicitly installed packages available in
+#                        the official repositories.
+#    official            To list explicitly installed packages
+#                        not available in official repositories:
+#    [search pattern]    Will search for the specific [search pattern] excluding
+#                        official and unofficial.
+
+list() {
+    if [ -z $1 ]; then
+        pacman -Qen
+        pacman -Qem
+        exit
+    fi
+
+    case $1 in
+        official)
+            pacman -Qen
+            exit
+        ;;
+        unofficial)
+            pacman -Qem
+            exit
+        ;;
+        *)
+            pacman -Qen | grep $1
+            pacman -Qem | grep $1
+            exit
+        ;;
+    esac
+}
+
+list $*

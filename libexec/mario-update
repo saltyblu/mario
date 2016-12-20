@@ -1,0 +1,10 @@
+#!/bin/bash
+# Usage: mario update
+# Summary: Updates the Database
+#
+
+if [ $# -gt 0 ]; then
+    echo "WARN: Arguments are needless here."
+fi
+
+pacman -Sy

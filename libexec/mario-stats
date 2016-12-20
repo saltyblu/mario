@@ -1,0 +1,7 @@
+#!/bin/bash
+# Usage: mario stats
+# Summary: Show some statistics about your packages.
+# Help: mario stats
+#
+
+yaourt --stats

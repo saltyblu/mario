@@ -1,0 +1,72 @@
+#!/usr/bin/ruby
+# Usage: mario search [options] package
+# Help: Searches for packages,
+# detailed information with mario search --help
+#
+require 'optparse'
+require 'ostruct'
+
+class App
+  VERSION ='0.0.1'
+  def initialize(arguments, stdin)
+    @arguments = arguments
+    @stdin = stdin
+
+    # Set default options here
+    @options = OpenStruct.new
+    @options.quite = false
+  end
+
+  def run
+    parsed_options?
+    if parsed_arguments?
+      command = get_command
+      exec( command )
+    else
+      exit 1
+    end
+  end
+
+
+  def get_command
+    if @options.quite
+      command = "pacman -Ssq #{@arguments.join(" ")}"
+    else
+      command = "pacman -Ss #{@arguments.join(" ")}"
+    end
+  end
+
+  def parsed_options?
+
+    opts = OptionParser.new
+    opts.banner = 'Usage: mario search [options] package'
+
+    opts.on('-v', '--version', 'Display the version, then exits') do
+      output_version
+      exit 0
+    end
+
+    opts.on("-q", "--quite", "Lesser output") do
+      @options.quite = true
+    end
+
+    @options.help = opts.help()
+    opts.parse!(@arguments) rescue return false
+  end
+
+  def parsed_arguments?
+    if @arguments.length < 1
+      print "Error: Need more arguments. Try --help \n"
+      print @options.help
+      return false
+    end
+    return true
+  end
+
+  def output_version
+    p "mario-search version: #{VERSION}"
+  end
+end
+
+app = App.new(ARGV, STDIN)
+app.run

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Usage: mario mark package
+# Summary: Mark one or more installed packages as non explicitly installed
+#
+
+if [ $# -gt 0 ]; then
+    pacman -S --asdeps $*
+else
+    echo "Error need at least one parameter"
+fi

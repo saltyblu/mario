@@ -1,0 +1,12 @@
+#!/bin/bash
+# Usage: mario localinstal packagefile
+# Summary: Install specific package not from the repositories but from a file
+# Help:
+#   mario localinstall mario.tgz
+#
+
+if [ $# -gt 0 ]; then
+    pacman -U $*
+else
+    echo "Error need at least one parameter"
+fi

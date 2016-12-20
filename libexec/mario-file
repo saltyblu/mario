@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Usage: mario file <filename>
+# Summary: Shows up all files from given package
+#
+
+pkgfile $*

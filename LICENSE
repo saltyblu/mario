@@ -1,0 +1,76 @@
+
+The MirOS Licence
+
+/*-
+ * Copyright © 2015
+ *      Volker Schmitz <s.blu24@gmail.com>
+ *
+ * Provided that these terms and disclaimer and all copyright notices
+ * are retained or reproduced in an accompanying document, permission
+ * is granted to deal in this work without restriction, including un‐
+ * limited rights to use, publicly perform, distribute, sell, modify,
+ * merge, give away, or sublicence.
+ *
+ * This work is provided “AS IS” and WITHOUT WARRANTY of any kind, to
+ * the utmost extent permitted by applicable law, neither express nor
+ * implied; without malicious intent or gross negligence. In no event
+ * may a licensor, author or contributor be held liable for indirect,
+ * direct, other damage, loss, or other issues arising in any way out
+ * of dealing in the work, even if advised of the possibility of such
+ * damage or existence of a defect, except proven that it results out
+ * of said person’s immediate fault when using the work as intended.
+ */
+
+INSTRUCTIONS:
+
+To apply the template⁽¹⁾ specify the years of copyright (separated by
+comma, not as a range), the legal names of the copyright holders, and
+the real names of the authors if different. Avoid adding text.
+
+RATIONALE:
+
+This licence is apt for any kind of work (such as source code, fonts,
+documentation, graphics, sound etc.) and the preferred terms for work
+added to MirBSD. It has been drafted as universally usable equivalent
+of the “historic permission notice”⁽²⁾ adapted to Europen law because
+in some (droit d’auteur) countries authors cannot disclaim all liabi‐
+lities. Compliance to DFSG⁽³⁾ 1.1 is ensured, and GPLv2 compatibility
+is asserted unless advertising clauses are used. The MirOS Licence is
+certified to conform to OKD⁽⁴⁾ 1.0 and OSD⁽⁵⁾ 1.9, and qualifies as a
+Free Software⁽⁶⁾ and also Free Documentation⁽⁷⁾ licence and is inclu‐
+ded in some relevant lists⁽⁸⁾⁽⁹⁾⁽¹⁰⁾⁽¹¹⁾.
+
+We believe you are not liable for work inserted which is intellectual
+property of third parties, if you were not aware of the fact, act ap‐
+propriately as soon as you become aware of that problem, seek an ami‐
+cable solution for all parties, and never knowingly distribute a work
+without being authorised to do so by its licensors.
+
+REFERENCES:
+
+    also at https://www.mirbsd.org/MirOS-Licence (and with .htm appended); ASCII version (instead of UTF-8) at http://mirbsd.de/MirOS-Licence.asc
+    http://www.opensource.org/licenses/historical.php
+    http://www.debian.org/social_contract#guidelines
+    http://www.opendefinition.org/1.0
+    http://www.opensource.org/docs/osd
+    http://www.gnu.org/philosophy/free-sw.html
+    http://www.gnu.org/philosophy/free-doc.html
+    http://www.ifross.de/ifross_html/lizenzcenter.html
+    http://www.opendefinition.org/licenses
+    http://opensource.org/licenses/miros.html
+    http://copyfree.org/licenses/
+
+$MirOS: src/share/misc/licence.template,v 1.29 2013/11/06 18:36:23 tg Rel $
+Die MirOS-Lizenz
+inoffizielle deutsche Übersetzung
+Urheberrechtsvermerk: Copyright © Jahr, Jahr, Jahr, …
+Vorname Nachname <email@adresse.domain>
+
+Hiermit wird, unter der Bedingung, daß diese Lizenzbestimmungen inklusive Haftungsausschlußklausel („Disclaimer“) sowie alle Urheberrechtsvermerke intakt bleiben oder in beigefügten Dokumenten wiedergegeben werden, die Erlaubnis erteilt, uneingeschränkt mit diesem Werk zu handeln; insbesondere beïnhaltet dies, es zu nutzen sowie öffentlich aufzuführen, es zu verbreiten, verkaufen, abzuwandeln, mit anderen Werken zusammenzuführen, öffentlich zugänglich zu machen und zu unterlizensieren.
+
+Dieses Werk wird „so wie es ist“ und ohne jegliche Gewährleistung zur Verfügung gestellt, unter Ausschöpfung des gesetzlichen Rahmens hierfür. Außer in Fällen von Vorsatz oder grober Fahrlässigkeit haften Lizenzgeber, Autoren und Beitragende nicht für indirekte, direkte oder andere Schäden, Verluste oder andere Nachteile, die aus der Verwendung des Werkes entstehen, selbst wenn auf die Möglichkeit solcher Schäden oder auf die Existenz von Defekten hingewiesen wurde; auch implizite Haftung wird ausgeschlossen. Dies gilt nicht, wenn bewiesen ist, daß Schaden, der bei bestimmungsgemäßer Nutzung des Werkes entsteht, ein direktes Verschulden der jeweiligen Person ist.
+
+Diese inoffizielle Übersetzung dient lediglich der Hilfestellung für des Englischen nicht mächtige Lizenznehmer. Sie ist in keiner Weise rechtlich bindend oder als eigenständige Lizenz zu benutzen; sie darf nicht als Basis für die Auslegung der englischsprachigen Originallizenz benutzt werden. (Es ist die Absicht des Lizenzautors, einen Gewährleistungs- und Haftungsausschluß, wie ihn die EUPL hat, auszudrücken; durch die Kürze ist einiges – z.B. daß die Marktreife, Verwendbarkeit für einen bestimmten Zweck, Mängelfreiheit, Richtigkeit, usw. nicht versprochen wird – implizit.)
+
+Valid XHTML/1.1!
+

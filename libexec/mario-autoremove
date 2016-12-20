@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Usage: mario autoremove
+# Summary: Recursively removes ALL orphanded packages
+#
+
+if [[ ! -n "$(pacman -Qdt)" ]]; then
+    echo "No orphans to remove."
+else
+    sudo pacman -Rns $(pacman -Qtdq)
+fi

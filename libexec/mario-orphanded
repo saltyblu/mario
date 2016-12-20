@@ -1,0 +1,11 @@
+#!/bin/bash
+# Usage: mario orphanded|notused
+# Summary: List automaticly Packages that are no longer needed by any other Package.
+#
+
+if [ $# -gt 0 ]; then
+    echo "Error: Arguments are needless here."
+    exit 1
+fi
+
+pacman -Qtdq

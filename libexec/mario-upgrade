@@ -1,0 +1,16 @@
+#!/bin/bash
+# Usage: mario upgrade
+# Summary: Synchronize with repositories and then upgrade packages that are out of date on the local system.
+#
+
+if [ $# -eq 0 ]; then
+    pacman -Suy
+fi
+
+if [ "$1" == "-a" ]; then
+    yaourt -Suya
+fi
+
+if [ "$1" == "--a" ]; then
+    yaourt -Suya
+fi

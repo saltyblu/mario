@@ -1,0 +1,12 @@
+#!/bin/bash
+# Usage: mario files package
+# Summary: List all files installed by a given package.
+# Help:
+#   mario files gnome-shell
+#
+
+if [ $# -gt 0 ]; then
+    pacman -Ql $*
+else
+    echo "Error need at least one parameter"
+fi
