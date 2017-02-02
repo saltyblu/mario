@@ -14,3 +14,7 @@ fi
 if [ "$1" == "--a" ]; then
     yaourt -Suya
 fi
+
+if [ "$1" == "--aur" ]; then
+    yaourt -Suya
+fi
