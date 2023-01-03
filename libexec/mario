@@ -20,6 +20,12 @@ abs_dirname() {
 }
 
 libexec_path="/var/lib/mario/libexec"
+
+if ! [ -d $libexec_path ]; then
+  mario_executable_path=$(realpath $0)
+  libexec_path=$(dirname $mario_executable_path)
+fi
+
 export _MARIO_ROOT="$(abs_dirname "$libexec_path")"
 export PATH="${libexec_path}:$PATH"
 
